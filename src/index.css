@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&family=Work+Sans:wght@400;500;600&display=swap');
+
+@theme {
+  --color-primary: #F15A24;
+  --color-primary-dark: #D1430A;
+  --color-secondary: #5F5E5E;
+  --color-on-surface: #1A1C1C;
+  --color-surface: #F9F9F9;
+  --color-surface-low: #F3F3F3;
+  
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Epilogue", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --spacing-xl: 80px;
+  --spacing-lg: 48px;
+  --spacing-md: 24px;
+  --spacing-sm: 12px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1];
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-black leading-tight;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+}
+
+@keyframes scroll-rtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-rtl {
+  animation: scroll-rtl 40s linear infinite;
+}
+
+.animate-scroll-rtl:hover {
+  animation-play-state: paused;
+}
