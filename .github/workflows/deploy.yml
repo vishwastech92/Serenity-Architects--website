@@ -36,4 +36,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/ 
           server-dir: ./public_html/
-          dangerous-clean-slate: true
+          state-name: .ftp-deploy-sync-state-v2.json
